@@ -28,10 +28,10 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/add', {
-        templateUrl: 'views/add.html',
-        controller: 'AddCtrl',
-        controllerAs: 'add'
+      .when('/spoiler', {
+        templateUrl: 'views/spoiler.html',
+        controller: 'SpoilerCtrl',
+        controllerAs: 'spoiler'
       })
       .otherwise({
         redirectTo: '/'

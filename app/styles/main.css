@@ -58,11 +58,6 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
-.mainc{
-    min-height: 730px;
-	background-image: url('../images/coork.jpg');
-	background-repeat:repeat;
-	}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -86,59 +81,18 @@ body {
     border-bottom: 0;
   }
 }
-/*Note Main Css  created by luis chapoy */
-	.foot{
-		position:absolute;
-		bottom:10%;
-		font-size:.7em;
-		right:5%;
+	.spoiler-hidden{
+		opacity:0;
 	}
-	
-	.notes{
-		  text-decoration:none;
-		  color:#000;
-		  background:#ffc;
-		  display:block;
-		  height:18em;
-		  width:18em;
-		  padding:1em;
-		   /* Firefox */
-		  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
-		  /* Safari+Chrome */
-		  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-		  -webkit-transform:rotate(3deg);
-		  /* Opera */
-		  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-		  transform:rotate(3deg);
-		  overflow:auto;
-		 
-	}
-	.notes{
-	  margin:1em;
-	  float:left;
-	   list-style:none;
-	}
-	.nHeader{
-		position:absolute;
-		top:5%;
-		right:3%;
-
-	}
-	.cDate{
+	.spoiler{
 		color:blue;
+		text-decoration:underline;
 	}
-	.eDate{
+	.censored{
 		color:red;
+		text-decoration:underline;
 	}
-	.glyphicon{
-		background:#ffc;
-		border:0px;
-	}
-	.glyphicon:hover{
-		color: #FF00FF;
-	}
-	
-    .ng-dirty.ng-invalid { background-color: lightpink; }
+	.ng-dirty.ng-invalid { background-color: lightpink; }
 
     .ng-valid { background-color: lightgreen; }
     span.error { color: red; font-weight: bold; }

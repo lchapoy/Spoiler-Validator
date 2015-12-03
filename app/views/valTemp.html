@@ -1,0 +1,62 @@
+<form name="{{formName}}" novalidate ng-submit="Name.$valid&&submit()">
+    <div class="well">
+        <h3>{{title}}</h3>
+        <div class="form-group" ng-repeat="(key,item) in options">
+			
+            <label>{{key}}</label>
+            <input name="{{key}}" class="form-control"
+                ng-model="linkModel[key]" ng-required="true" placeholder="{{item.placeholder}}" validater='{{item.validater}}' ng-class="item.type" />
+				
+			 </input>
+			<!-- <div class="error">
+				<vmessage source='{{key}}' ng-repeat="(key1,item1) in item.validater"><div>{{item1.message}}</div></vmessage>
+			 </div>-->
+					<span class="error" ng-show="{{formName}}.{{key}}.$error.type&&submitted" >
+						<p ng-if="!item.validater.type.message">Must be a valid {{item.validater.type.value}}</p>
+						<p ng-if="item.validater.type.message">{{item.validater.type.message}}</p>
+					</span>
+					 <span class="error" ng-show="{{formName}}.{{key}}.$error.min&&submitted&&!{{formName}}.{{key}}.$error.type" >
+						<p ng-if="!item.validater.range.message&&!item.validater.min.message">Value must be greather than {{item.validater.min.value||item.validater.range.value[0]}}</p>
+						<p ng-if="item.validater.range.message||item.validater.min.message">{{item.validater.min.message||item.validater.range.message}}</p> 
+					</span>
+					 <span class="error" ng-show="{{formName}}.{{key}}.$error.max&&submitted&&!{{formName}}.{{key}}.$error.type" >
+						<p ng-if="!item.validater.range.message&&!item.validater.max.message">Value must be less than {{item.validater.max.value||item.validater.range.value[1]}}</p>
+						<p ng-if="item.validater.range.message||item.validater.max.message">{{item.validater.max.message||item.validater.range.message}}</p> 
+					</span>
+					<span class="error" ng-show="{{formName}}.{{key}}.$error.dateMin&&submitted" >
+						<p ng-if="!item.validater.dateMin.message">Date must be greather than {{item.validater.dateMin.value}}</p>
+						<p ng-if="item.validater.dateMin.message">{{item.validater.dateMin.message}}</p> 
+					</span>
+					 <span class="error" ng-show="{{formName}}.{{key}}.$error.dateMax&&submitted" >
+						<p ng-if="!item.validater.dateMax.message">Date must be less than {{item.validater.dateMax.value}}</p>
+						<p ng-if="item.validater.dateMax.message">{{item.validater.dateMax.message}}</p> 
+					</span>
+					
+					 <span class="error" ng-show="{{formName}}.{{key}}.$error.minLength&&submitted&&!{{formName}}.{{key}}.$error.type" >
+					   <p ng-if="!item.validater.minLength.message"> Input length must be greather than {{item.validater.minLength.value}}</p>
+						<p ng-if="item.validater.minLength.message">{{item.validater.minLength.message}}</p>
+					</span>
+					 <span class="error" ng-show="{{formName}}.{{key}}.$error.maxLength&&submitted&&!{{formName}}.{{key}}.$error.type" >
+					   <p ng-if="!item.validater.maxLength.message"> Input length must be less than {{item.validater.maxLength.value}}</p>
+						<p ng-if="item.validater.maxLength.message">{{item.validater.maxLength.message}}</p>
+					</span>
+					
+					<span class="error" ng-show="{{formName}}.{{key}}.$error.match&&submitted" >
+					   <p ng-if="!item.validater.match.message">This input is not equal to {{item.validater.match.value}} input</p>
+						<p ng-if="item.validater.match.message">{{item.validater.match.message}}</p>
+					</span>
+					
+					<span class="error" ng-show="{{formName}}.{{key}}.$error.npattern&&submitted&&!{{formName}}.{{key}}.$error.type" >
+					   <p ng-if="!item.validater.npattern.message">The input does not match the pattern: {{item.validater.pattern.value}}</p>
+						<p ng-if="item.validater.npattern.message">{{item.validater.npattern.message}}</p>
+					</span>
+					
+				
+			
+			
+ 
+        </div>
+			<input type="submit" id="submit" value="Submit" ng-click="submitted=true" />
+ 
+    </div>
+</form>
